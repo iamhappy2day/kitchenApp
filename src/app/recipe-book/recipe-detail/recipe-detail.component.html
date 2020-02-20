@@ -1,0 +1,27 @@
+<div class="recipe-pic">
+  <img src="{{targetRecipe.imageUrl}}" alt="{{targetRecipe.name}}">
+</div>
+
+<h2>{{targetRecipe.name}}</h2>
+
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item
+    (click)="this.shoppingService.onAddIngredients(targetRecipe.ingredients)">To shopping list
+  </button>
+  <button mat-menu-item
+    (click)="goToEditRecipe()">Edit recipe
+  </button>
+  <button mat-menu-item
+          (click)="onDeleteRecepie(id)"
+  >Delete recipe</button>
+</mat-menu>
+<button mat-raised-button color="warn" [matMenuTriggerFor]="appMenu">
+  Manage Recipe
+</button>
+
+<p>{{targetRecipe.description}}</p>
+<ul>
+  <li *ngFor="let ingredient of targetRecipe.ingredients">
+    {{ingredient.name}} - {{ingredient.amount}}
+  </li>
+</ul>

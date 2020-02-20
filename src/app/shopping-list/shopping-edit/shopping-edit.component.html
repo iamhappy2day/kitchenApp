@@ -1,0 +1,46 @@
+<div class="container">
+
+  <form
+    class="example-form"
+    [formGroup]="form"
+  >
+    <mat-form-field class ="example-full-width name">
+      <input
+        matInput placeholder="Name"
+        formControlName="name"
+        required
+      >
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width amount">
+      <input
+        matInput placeholder="Amount"
+        formControlName="amount"
+        required
+      >
+    </mat-form-field>
+
+    <div class="buttons">
+      <button
+        mat-raised-button color="primary"
+        [disabled]="!form.valid"
+        (click)="onAddIngredient()"
+      >
+        {{this.editMode? 'Update' : 'Add'}}
+      </button>
+      <button mat-raised-button color="accent"
+              *ngIf="editMode"
+              (click)="onDeleteIngredient()"
+      >
+        Delete
+      </button>
+      <button mat-raised-button color="warn"
+        (click)="onClearForm()"
+      >
+        Clear
+      </button>
+    </div>
+
+  </form>
+
+</div>

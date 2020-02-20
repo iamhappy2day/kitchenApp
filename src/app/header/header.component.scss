@@ -1,0 +1,37 @@
+.container {
+  margin-bottom: 1rem;
+.links-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    .links, .dropdown {
+      padding: 0 2rem;
+      span {
+        display: inline-block;
+        margin: 0 1rem;
+        font-size: 16px;
+        cursor: pointer;
+        color: #ffffff;
+      }
+    }
+  }
+  .logo {
+    font-size: 28px;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover p {
+      transition: 0.5s;
+      color: black;
+    }
+  }
+  .manage-recipe {
+    background: black;
+    color: white;
+  }
+  .active {
+    span{
+      transition: 0.4s;
+      color:black !important;
+    }
+  }
+}

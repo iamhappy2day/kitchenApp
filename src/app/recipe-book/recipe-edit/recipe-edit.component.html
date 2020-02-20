@@ -1,0 +1,61 @@
+<div class="container">
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Image Url</mat-label>
+      <input matInput formControlName="imageUrl">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <textarea matInput formControlName="description"></textarea>
+    </mat-form-field>
+
+    <div formArrayName="ingredients">
+      <div
+        class="ingredientItem"
+        *ngFor="let ingredientControl of controls; let i = index"
+        [formGroupName]="i">
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="name" placeholder="name">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <input matInput formControlName="amount" placeholder="amount">
+        </mat-form-field>
+        <div
+          class="icon-item"
+          (click)="onDeleteIngredient(i)"
+        >
+          <fa-icon [icon]="faWindowClose"></fa-icon>
+        </div>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button
+        (click)="onAddIngredient()"
+        mat-raised-button
+        type="button">
+        Add Ingredient
+      </button>
+      <button
+        mat-raised-button color="warn"
+        type="submit"
+        [disabled]="!form.valid"
+      >
+        Save
+      </button>
+      <button
+        (click)="onCancel()"
+        mat-raised-button>
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

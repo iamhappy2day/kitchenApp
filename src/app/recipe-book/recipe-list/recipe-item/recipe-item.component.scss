@@ -1,0 +1,14 @@
+a {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: 0.2s;
+  &:hover {
+    background: #bfb8b6;
+  }
+}
+
+p{
+  color: #000;
+}

@@ -1,0 +1,32 @@
+<div class="container">
+  <mat-toolbar color="warn" class="navbar">
+    <div class="logo"
+      (click)="onLogoClick()">
+      <p>Soboika app</p>
+    </div>
+    <div class="links-wrapper">
+      <div class="links">
+        <a
+          routerLinkActive="active"
+          routerLink="/recipes">
+          <span>Recipes</span>
+        </a>
+        <a
+          routerLinkActive="active"
+          routerLink="/shopping">
+          <span>Shopping List</span>
+        </a>
+      </div>
+      <div class="dropdown">
+        <mat-menu #appMenu="matMenu">
+          <button mat-menu-item>Save data</button>
+          <button mat-menu-item>Fetch data</button>
+        </mat-menu>
+        <button class="manage-recipe" mat-raised-button [matMenuTriggerFor]="appMenu">
+          Manage Recipe
+        </button>
+      </div>
+    </div>
+  </mat-toolbar>
+</div>
+

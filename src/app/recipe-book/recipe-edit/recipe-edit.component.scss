@@ -1,0 +1,26 @@
+.mat-form-field {
+  display: block;
+}
+.buttons {
+  button {
+    margin-right: 16px;
+    color: #ffffff;
+    background: #000;
+  }
+}
+
+.ingredientItem {
+  display: flex;
+}
+
+fa-icon {
+  color: red;
+  font-size: 30px;
+}
+mat-form-field {
+  display: block !important;
+}
+.ingredientItem .mat-form-field-infix {
+  padding: 0 0 4px 0 !important;
+}
+

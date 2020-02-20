@@ -1,0 +1,17 @@
+<div class="container">
+  <button mat-raised-button color="warn"
+          (click)="createNewRecipe()">
+    New Recipe
+  </button>
+  <ul>
+    <li *ngFor="let recipeEl of recipes; let i = index">
+      <app-recipe-item
+        (click)="recipeService.getTargetRecipe(i)"
+        [recipe] = "recipeEl"
+        [id] = i>
+        {{recipeEl}}
+      </app-recipe-item>
+      <mat-divider></mat-divider>
+    </li>
+  </ul>
+</div>
